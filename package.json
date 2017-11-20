@@ -8,7 +8,7 @@
     "node": ">=6.4.0"
   },
   "scripts": {
-    "start": "nodemon server/index.js"
+    "start": "node Server/index.js"
   },
   "dependencies": {
     "angular": "^1.6.6",
