@@ -1,5 +1,13 @@
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: happenings
+version: 2
+jobs:
+  build:
+    docker: 
+      -image: circleci/node:7
+    steps:
+      -checkout
+      -run: echo "hello world"
+    # deployment:
+    #   staging:
+    #     branch: master
+    #     heroku:
+    #       appname: happenings
