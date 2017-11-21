@@ -1,0 +1,92 @@
+const db = require('./index.js');
+const Post = require('./Post.js');
+
+const samplePosts = [
+  {
+    name: '$8 Giants Tickets for 2018 On Sale Monday',
+    city: 'San Francisco',
+    date: '11/25/2017',
+    time: 'All Day',
+    category: 'Sports',
+    address: 'Westin St. Francis Lobby, SF',
+    description: 'Super cheap Giants tickets for the 2018 season are going on sale on Monday, November 20, 2018. You can buy tickets for April-June 2018 with many midweek tickets starting at just $8. (July-October tickets won’t go on sale until February 2018). Normally this sale is on “Black Friday” but for 2018 they’re stating the sale early.',
+    cost: '8',
+    intensity: 3,
+    rating: 3,
+    likes: 0,
+    imgUrl: 'http://cdn.funcheap.com/wp-content/uploads/2015/11/17335910566_236c1088b4_b1.jpg',
+    reference: 'San Francisco#12345',
+    createdAt: '2017-11-14T05:57:26.037Z',
+  },
+  {
+    name: 'LA’s Biggest Sugar Castle',
+    city: 'Los Angeles',
+    date: '12/11/2017',
+    time: '3:00 PM',
+    category: 'Family',
+    address: '2800 E Observatory Rd, Los Angeles',
+    description: 'This annual holiday tradition began in 2005 with the stunning Medieval Sugar Castle, a life-like French Chateau that becomes more extravagant with each passing year. In past years the castle has been over 12 feet tall and used over 600 lbs. of sugar.',
+    cost: 0,
+    intensity: 1,
+    rating: 4,
+    likes: 10,
+    imgUrl: 'http://cdn.funcheap.com/wp-content/uploads/2015/11/WSF-SugarC_03xF_resized1-768x615.jpg',
+    reference: 'Los Angeles#23494',
+    createdAt: '2017-11-12T05:57:26.037Z',
+  },
+  {
+    name: 'Tour of Diego Rivera’s 1st US Mural',
+    city: 'New York',
+    date: '01/10/2018',
+    time: '6:00 PM',
+    category: 'Arts',
+    address: '350 Fifth Ave, NY',
+    description: 'The mural “Allegory of California” graces the stairwell of the City Club (formerly the Pacific Stock Exchange Club). Normally closed the public, this is an opportunity to see the first mural painted in the US by the great Mexican artist Diego Rivera.',
+    cost: 20,
+    intensity: 2,
+    rating: 5,
+    likes: 30,
+    imgUrl: 'http://cdn.funcheap.com/wp-content/uploads/2012/08/tour96_1.jpg',
+    reference: 'New York#32954',
+    createdAt: '2017-11-01T05:57:26.037Z',
+  },
+  {
+    name: 'Strike Out Hunger: Free Bowling & Canned Food Drive',
+    city: 'Santa Cruz',
+    date: '12/10/2017',
+    time: '10:00 AM',
+    category: 'Sports',
+    address: '115 Cliff St, Santa Cruz',
+    description: 'How’s your bowling average these days? Bring a can of food and bowl a free game at the Boardwalk Bowl in Santa Cruz from November 1 through December 31, 2017.',
+    cost: 0,
+    intensity: 4,
+    rating: 5,
+    likes: 11,
+    imgUrl: 'https://static.pexels.com/photos/4192/sport-alley-ball-game.jpg',
+    reference: 'Santa Cruz#323424',
+    createdAt: '2017-10-01T05:57:26.037Z',
+  },
+  {
+    name: 'Hit Parade: Musical Archives & Public Knowledge with Josh Kun',
+    city: 'Berkeley',
+    date: '11/21/2017',
+    time: '06:30 PM',
+    category: 'Arts',
+    address: '2155 Center St, Berkeley',
+    description: 'What does music tell people about the sustainability and precarity of publics? How can you use music—rehearsed, recorded, archived—to engage histories of erasure and displacement while imagining new forms of community and collaboration? Josh Kun’s talk will explore these ideas through his project Hit Parade: Live in San Francisco, which combines archival research, live performance, musical storytelling, and musical production to explore the politics of gentrification in contemporary San Francisco.',
+    cost: 0,
+    intensity: 1,
+    rating: 5,
+    likes: 200,
+    imgUrl: '',
+    reference: 'Berkeley#323424',
+    createdAt: '2017-12-01T05:57:26.037Z',
+  },
+];
+
+const addSamplePosts = () => {
+  Post.create(samplePosts).then(() => db.disconnect());
+};
+
+addSamplePosts();
+
