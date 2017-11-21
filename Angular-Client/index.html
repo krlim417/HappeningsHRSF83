@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="client/styles.css">
   </head>
   <body>
-    <app ng-app="happeningsApp">
-      <h5>this message will disappear when <em>app</em> component is correctly rendered</h5>
-    </app>
-    <script src="client/index.js"></script>
+    <div ng-app="app">
+      <app />
+    </div>
+    <script src="index.js"></script>
+    <script src="src/services/landingRedirector.js"></script>
     <script src="src/components/app.js"></script>
     <script src="src/components/landing.js"></script>
     <script src="src/components/event.js"></script>

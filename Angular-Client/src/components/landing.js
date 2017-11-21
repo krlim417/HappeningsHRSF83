@@ -1,9 +1,14 @@
-angular.module('happeningsApp')
+angular.module('app')
 
-  .controller('landingController', () => {
-
-  })
   .component('landing', {
-    controller: 'landingController',
-    templateUrl: '../../templates/landing.html',
+    bindings: {
+      redirect: '<',
+    },
+    controller: function redirectToHome(landingRedirector) {
+      this.input = '';
+      this.handleClick = () => {
+        landingRedirector.redirectHome(this.input);
+      };
+    },
+    templateUrl: '/src/templates/landing.html',
   });
