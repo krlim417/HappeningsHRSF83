@@ -17,7 +17,6 @@ const postSchema = new mongoose.Schema({
   likes: { type: Number, default: 0 },
   imgUrl: String,
   reference: String,
-  time: { type: Date, default: Date.now },
 },
 {
   timestamps: true,
