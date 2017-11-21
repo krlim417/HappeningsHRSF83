@@ -1,9 +1,8 @@
-angular.module('happeningsApp')
+angular.module('app')
 
-  .controller('homeCtrl', () => {
-
-  })
-  .component('app', {
-    controller: 'homeCtrl',
-    templateUrl: '../../templates/home.html',
+  .component('home', {
+    bindings: {},
+    controller: () => {
+    },
+    templateUrl: '/src/templates/home.html',
   });

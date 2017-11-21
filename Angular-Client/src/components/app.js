@@ -1,9 +1,6 @@
-angular.module('happeningsApp')
+angular.module('app')
 
-  .controller('AppCtrl', () => {
-
-  })
   .component('app', {
-    controller: 'AppCtrl',
-    templateUrl: '../../templates/app.html',
+    controller: () => {},
+    templateUrl: '/src/templates/app.html',
   });
