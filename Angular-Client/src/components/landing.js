@@ -4,7 +4,7 @@ angular.module('app')
     bindings: {
       changeView: '<',
     },
-    controller: function redirectToHome(landingRedirector) {
+    controller: function landingCtrl(landingRedirector) {
       this.input = '';
       this.handleClick = () => {
         landingRedirector.redirectHome(this.input);
