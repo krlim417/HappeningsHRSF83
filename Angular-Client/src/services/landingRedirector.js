@@ -1,6 +1,6 @@
 angular.module('app')
 
-  .service('landingRedirector', function landingRedirect($http, $window) {
+  .service('landingRedirector', function landingRedirect($http) {
     this.result = [];
     this.redirectHome = function redirectHome(city) {
       return $http.post('/home', { location: city })
