@@ -2,7 +2,7 @@ angular.module('app')
 
   .component('home', {
     bindings: {},
-    controller: function (landingRedirector) {
+    controller: function homeCtrl(landingRedirector) {
       this.recommendations = landingRedirector.result;
     },
     templateUrl: '/src/templates/home.html',

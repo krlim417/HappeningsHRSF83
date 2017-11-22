@@ -1,4 +1,4 @@
-<div class="home">
+<div>
   <div class="filters">Filters:
       <form class="search-input">Search: 
         <input type="text" placeholder="">
@@ -30,7 +30,7 @@
       </form>
   </div>
   <div class="top-activity-desc">Top activities for your location:</div>
-  <div ng-repeat="activity in $ctrl.recommendations" class="search-results">
+  <div ng-repeat="activity in $ctrl.recommendations">
     <div class="activity-item">
       <div class="name-likes">
         <span class="activity-name">{{activity.name}}</span>

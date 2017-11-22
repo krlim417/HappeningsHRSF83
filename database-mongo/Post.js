@@ -25,8 +25,7 @@ const postSchema = new mongoose.Schema({
 const Post = mongoose.model('Post', postSchema);
 
 const fetchTopFive = (city, callback) => {
-  // console.log('city in db', city);
-  Post.find({ city: `${city}` }).limit(5).exec((err, result) => {
+  Post.find({ city: `${city}` }).limit(5).sort({ likes: -1 }).exec((err, result) => {
     if (err) {
       console.log('Failed to retrieve top five recommendations in database.');
     }

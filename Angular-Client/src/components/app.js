@@ -1,12 +1,11 @@
 angular.module('app')
 
-  .controller('AppCtrl', function () {
-    this.view = 'landing';
-    this.changeView = (option) => {
-      this.view = option;
-    };
-  })
   .component('app', {
-    controller: 'AppCtrl',
+    controller: function appCtrl() {
+      this.view = 'landing';
+      this.changeView = (option) => {
+        this.view = option;
+      };
+    },
     templateUrl: '/src/templates/app.html',
   });

@@ -10,7 +10,6 @@ angular.module('app')
         })
         .catch(() => {
           console.log('Failed to post to /home for redirect from the landing page.');
-          return false;
         });
     };
   });
