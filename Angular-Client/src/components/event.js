@@ -1,4 +1,4 @@
-angular.module('happeningsApp')
+angular.module('app')
   .component('event', {
     bindings: {
       event: '<',

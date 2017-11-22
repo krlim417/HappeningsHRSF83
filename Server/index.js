@@ -1,24 +1,24 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const db = require('../database-mongo/post.js');
 
 const app = express();
 const port = 3000;
 
 app.use(express.static(path.join(__dirname, '/../Angular-Client')));
 app.use(express.static(path.join(__dirname, '/../node_modules')));
+app.use(bodyParser.json());
 
 app.get('/', (request, response) => {
   response.send('Get request to `/` received.');
 });
 
 app.post('/home', (request, response) => {
-  // get top five activity recommendations from database
-  // send the top five activity recommendations for the city back to the client
-  response.send('Get request to `/home` received.');
+  db.fetchTopFive(request.body.location, (result) => {
+    response.send(result);
+  });
 });
-
-app.use(bodyParser.json());
 
 app.listen(port, (err) => {
   if (err) {

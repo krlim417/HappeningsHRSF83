@@ -1,3 +1,15 @@
 <div>
-  <landing redirect="$ctrl.redirectHome"/>
+  <div class="nav">
+    <span class="logo">Happenings</span>
+    <span 
+      ng-class="$ctrl.view === 'landing' ? 'nav-selected' : 'nav-unselected'"
+      ng-click="$ctrl.changeView('home')">
+      Edit
+    </span>
+    <span class="nav-unselected">Add</span>
+  </div>
+  <div class="main" ng-switch on="$ctrl.view">
+    <landing changeTheView="$ctrl.changeView()" ng-switch-when="landing" change-view="$ctrl.changeView"></landing>
+    <home ng-switch-when="home"></home>
+  </div>
 </div>

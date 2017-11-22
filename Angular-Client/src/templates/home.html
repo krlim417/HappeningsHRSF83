@@ -1,9 +1,4 @@
-<div>
-  <div class="nav-bar">
-    <h2>Happenings</h2>
-    <button type="button">Edit</button>
-    <button type="button">Add</button>
-  </div>
+<div class="home">
   <div class="filters">Filters:
       <form class="search-input">Search: 
         <input type="text" placeholder="">
@@ -34,13 +29,17 @@
         <input type="radio" value="5">5
       </form>
   </div>
-  <div class="search-results">Top five activities for your location:
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+  <div class="top-activity-desc">Top activities for your location:</div>
+  <div ng-repeat="activity in $ctrl.recommendations" class="search-results">
+    <div class="activity-item">
+      <div class="name-likes">
+        <span class="activity-name">{{activity.name}}</span>
+        <span class="activity-likes">Likes: {{activity.likes}}</span>
+      </div>
+      <div class="image-description">
+        <span><img class="activity-image" src={{activity.imgUrl}}></span>
+        <span class="activity-description">{{activity.description}}</span>
+      </div>
+    </div>
   </div>
 </div>
