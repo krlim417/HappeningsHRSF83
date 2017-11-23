@@ -2,8 +2,7 @@ angular.module('app')
   .service('search', function landingRedirect($http) {
 
     this.filter = (input) => {
-      console.log(input);
-      $http.get('/search', { data: { input } })
+      $http.get(`/search/${input}`, { data: { input } })
         .then((response) => {
           console.log('Successfully posted to /home for redirect from the landing page.');
           this.result = response.data;

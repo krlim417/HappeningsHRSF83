@@ -20,6 +20,12 @@ app.post('/home', (request, response) => {
   });
 });
 
+app.get('/search/:input', (request, responce) => {
+  console.log(request.params.input);
+
+  //  search database for top five items containing the name
+});
+
 app.listen(port, (err) => {
   if (err) {
     console.log('something bad happened', err);
