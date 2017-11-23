@@ -1,14 +1,15 @@
 angular.module('app')
-  .service('search', function landingRedirect($http) {
+  .service('search', function go($http, landingRedirector) {
 
     this.filter = (input) => {
-      $http.get(`/search/${input}`, { data: { input } })
+      console.log(landingRedirector.city);
+      $http.get(`/search/${landingRedirector.city}/${input}`)
         .then((response) => {
-          console.log('Successfully posted to /home for redirect from the landing page.');
+          console.log('Successfully sent get to search route.');
           this.result = response.data;
         })
         .catch(() => {
-          console.log('Failed to post to /home for redirect from the landing page.');
+          console.log('Failed to send get request');
         });
     };
   });

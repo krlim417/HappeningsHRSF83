@@ -20,8 +20,8 @@ app.post('/home', (request, response) => {
   });
 });
 
-app.get('/search/:input', (request, responce) => {
-  console.log(request.params.input);
+app.get('/search/:city/:input', (request, responce) => {
+  console.log('input', request.params);
 
   //  search database for top five items containing the name
 });
