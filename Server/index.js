@@ -22,7 +22,7 @@ app.post('/home', (request, response) => {
 
 app.get('/search/:city/:input', (request, responce) => {
   db.search(request.params.city, request.params.input, (results) => {
-    console.log(results);
+    responce.send(results);
   });
 });
 

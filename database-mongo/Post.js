@@ -38,7 +38,6 @@ const search = (city, input, callback) => {
     if (err) {
       console.log('Search failed');
     }
-    console.log(city);
     console.log(input);
     callback(result);
   });

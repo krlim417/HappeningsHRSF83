@@ -6,6 +6,7 @@ angular.module('app')
         .then((response) => {
           console.log('Successfully sent get to search route.');
           this.result = response.data;
+          console.log(this.result);
         })
         .catch(() => {
           console.log('Failed to send get request');
