@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const db = require('../database-mongo/post.js');
+const db = require('../database-mongo/Post.js');
 
 const app = express();
 const port = 3000;
@@ -21,9 +21,9 @@ app.post('/home', (request, response) => {
 });
 
 app.get('/search/:city/:input', (request, responce) => {
-  console.log('input', request.params);
-
-  //  search database for top five items containing the name
+  db.search(request.params.city, request.params.input, (results) => {
+    console.log(results);
+  });
 });
 
 app.listen(port, (err) => {
