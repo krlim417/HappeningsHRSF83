@@ -4,7 +4,12 @@ angular.module('app')
     bindings: {},
     controller: function homeCtrl(landingRedirector, search) {
       this.recommendations = landingRedirector.result;
-      this.input = '';
+      this.input = {
+        value: 'Anything!',
+        cost: 'free',
+        duration: 'Short',
+        intensity: '1',
+      };
       this.search = search.filter;
       this.searchRecommendations = (input) => {
         search.filter(input, (results) => {
