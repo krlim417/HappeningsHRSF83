@@ -2,7 +2,6 @@
   <div class="filters">Filters:
       <form class="search-input">Search for an Activity: 
         <input type="text" placeholder="Fishing..." ng-model="$ctrl.input">
-        <button ng-click="$ctrl.search($ctrl.input)">Let's Go!</button>
       </form>
       <form>Cost: 
         <select class="cost-selection">
@@ -30,6 +29,7 @@
         <input type="radio" name="intensity-value" value="5">5
       </form>
   </div>
+  <button ng-click="$ctrl.searchRecommendations($ctrl.input)">Let's Go!</button>
   <div class="top-activity-desc">Top activities for your location:</div>
   <div ng-repeat="activity in $ctrl.recommendations">
     <div class="activity-item">
