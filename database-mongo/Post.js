@@ -33,5 +33,16 @@ const fetchTopFive = (city, callback) => {
   });
 };
 
+const search = (city, input, callback) => {
+  Post.find({ city: `${city}`, name: { $regex: `${input}`, $options: 'i' } }).sort({ likes: -1 }).exec((err, result) => {
+    if (err) {
+      console.log('Search failed');
+    }
+    console.log(input);
+    callback(result);
+  });
+};
+
 module.exports = Post;
 module.exports.fetchTopFive = fetchTopFive;
+module.exports.search = search;

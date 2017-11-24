@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const db = require('../database-mongo/post.js');
+const db = require('../database-mongo/Post.js');
 
 const app = express();
 const port = 3000;
@@ -17,6 +17,12 @@ app.get('/', (request, response) => {
 app.post('/home', (request, response) => {
   db.fetchTopFive(request.body.location, (result) => {
     response.send(result);
+  });
+});
+
+app.get('/search/:city/:input', (request, responce) => {
+  db.search(request.params.city, request.params.input, (results) => {
+    responce.send(results);
   });
 });
 
