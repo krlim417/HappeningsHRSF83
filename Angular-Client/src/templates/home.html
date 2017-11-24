@@ -5,13 +5,13 @@
       </form>
       <form>Cost: 
         <select class="cost-selection" ng-model="$ctrl.input.cost" ng-change="$ctrl.searchRecommendations($ctrl.input)">
-          <option value="free">Free</option>
-          <option value="below5">Below $5</option>
-          <option value="$5-10">$5-$10</option>
-          <option value="$10-20">$10-20</option>
-          <option value="$20-50">$20-50</option>
-          <option value="$$50-100">$50-100</option>
-          <option value="$100+">$100+</option>
+          <option value="0">0</option>
+          <option value="5">$5 and less</option>
+          <option value="10">$10 and less</option>
+          <option value="20">$20 and less</option>
+          <option value="50">$50 and less</option>
+          <option value="100">$100 and less</option>
+          <option value="$100000000">$100+</option>
         </select>
       </form>
       <form>Duration: 

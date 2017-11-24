@@ -33,12 +33,17 @@ const fetchTopFive = (city, callback) => {
   });
 };
 
-const search = (city, input, callback) => {
-  Post.find({ city: `${city}`, name: { $regex: `${input}`, $options: 'i' } }).sort({ likes: -1 }).exec((err, result) => {
+const search = (input, callback) => {
+  Post.find({
+    city: `${input.city}`,
+    name: { $regex: `${input.input}`, $options: 'i' },
+    cost: { $lt: `${input.cost}`},
+    duration: { $regex: `${input.duration}`, $options: 'i' },
+    intensity: `${input.intensity}`,
+  }).sort({ likes: -1 }).exec((err, result) => {
     if (err) {
       console.log('Search failed');
     }
-    console.log(input);
     callback(result);
   });
 };
