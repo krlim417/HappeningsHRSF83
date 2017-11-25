@@ -1,15 +1,17 @@
 <div>
   <div class="nav">
-    <span class="logo">Happenings</span>
+    <span class="logo" ng-click="$ctrl.changeView('home')" >Happenings</span>
     <span 
       ng-class="$ctrl.view === 'landing' ? 'nav-selected' : 'nav-unselected'"
-      ng-click="$ctrl.changeView('home')">
+      ng-click="$ctrl.changeView('create')">
       Edit
     </span>
-    <span class="nav-unselected">Add</span>
+    <span class="nav-unselected" ng-click="$ctrl.changeView('create')">Add</span>
   </div>
   <div class="main" ng-switch on="$ctrl.view">
     <landing changeTheView="$ctrl.changeView()" ng-switch-when="landing" change-view="$ctrl.changeView"></landing>
     <home ng-switch-when="home"></home>
+    <create ng-switch-when="create" change-view="$ctrl.changeView"></create>
+    <confirmation ng-switch-when="confirmation" change-view="$ctrl.changeView"></confirmation>
   </div>
 </div>

@@ -14,6 +14,7 @@ const postSchema = new mongoose.Schema({
   cost: Number,
   intensity: Number,
   rating: Number,
+  duration: String,
   likes: { type: Number, default: 0 },
   imgUrl: String,
   reference: String,
@@ -48,6 +49,17 @@ const search = (input, callback) => {
   });
 };
 
+const save = (input, cb) => {
+  Post.create(input, function (err) {
+    if (err) {
+      throw err;
+    } else {
+      cb();
+    }
+  });
+};
+
 module.exports = Post;
 module.exports.fetchTopFive = fetchTopFive;
 module.exports.search = search;
+module.exports.save = save;

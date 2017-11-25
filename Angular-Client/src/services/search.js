@@ -10,4 +10,15 @@ angular.module('app')
           console.log('Failed to send get request');
         });
     };
+    this.save = function save(post, cb) {
+      $http.post('/save', post)
+        .then((response) => {
+          console.log('Successfully saved your post!', response);
+          landingRedirector.redirectHome(post.city);
+          cb('home');
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
   });

@@ -5,21 +5,21 @@
       <p>Event Name
         <input class="create-input" ng-model='$ctrl.post.name' type="text"></input><br>
         City
-        <input class="create-input" type="text"></input><br>
+        <input class="create-input" ng-model='$ctrl.post.city' type="text"></input><br>
         Date
-        <input class="create-input" type="text"></input><br>
+        <input id="date" type="date" ng-mode="$ctrl.post.date"></input><br>
         Time
-        <input class="create-input" type="text"></input><br>
+        <input class="create-input" ng-model='$ctrl.post.time' type="time"></input><br>
         Description<br>
-        <textarea rows="10" cols="70" class="create-body-textarea"></textarea><br>
+        <textarea rows="10" cols="70" ng-model='$ctrl.post.description' class="create-body-textarea"></textarea><br>
         Image Url
-        <input class="create-input" type="text"></input><br>
+        <input class="create-input" ng-model='$ctrl.post.imgUrl' type="text"></input><br>
         Cost
-        <input class="create-input" type="text"></input><br>
+        <input class="create-input" ng-model='$ctrl.post.cost' type="text"></input><br>
         Address
-        <input class="create-input" type="text"></input><br>
+        <input class="create-input" ng-model='$ctrl.post.address' type="text"></input><br>
         Intensity
-        <select name="intensity">
+        <select name="intensity" ng-model='$ctrl.post.intensity'>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -27,12 +27,13 @@
           <option value="5">5</option>
         </select><br>
         Duration
-        <select name="time">
+        <select name="time" ng-model='$ctrl.post.duration'>
           <option value="short">Short</option>
           <option value="medium">Medium</option>
           <option value="long">Long</option>
         </select><br>
-        <button class="create-submit-button" type="submit">Save post</button>
+        <button class="create-submit-button"
+         ng-click='$ctrl.click()'>Save post</button>
       </p>
     </form>
   </div>
