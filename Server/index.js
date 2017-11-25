@@ -20,8 +20,9 @@ app.post('/home', (request, response) => {
   });
 });
 
-app.get('/search/:city/:input', (request, responce) => {
-  db.search(request.params.city, request.params.input, (results) => {
+app.get('/search/:city/:input/:cost/:duration/:intencity', (request, responce) => {
+  console.log(request.params);
+  db.search(request.params, (results) => {
     responce.send(results);
   });
 });

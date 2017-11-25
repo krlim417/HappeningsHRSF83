@@ -1,33 +1,32 @@
 <div>
   <div class="filters">Filters:
       <form class="search-input">Search for an Activity: 
-        <input type="text" placeholder="Fishing..." ng-model="$ctrl.input">
-        <button ng-click="$ctrl.search($ctrl.input)">Let's Go!</button>
+        <input type="text" placeholder="Fishing..." ng-model="$ctrl.input.value" ng-change="$ctrl.searchRecommendations($ctrl.input)" ng-click="$ctrl.input.value = null">
       </form>
       <form>Cost: 
-        <select class="cost-selection">
-          <option value="free">Free</option>
-          <option value="below5">Below $5</option>
-          <option value="$5-10">$5-$10</option>
-          <option value="$10-20">$10-20</option>
-          <option value="$20-50">$20-50</option>
-          <option value="$$50-100">$50-100</option>
-          <option value="$100+">$100+</option>
+        <select class="cost-selection" ng-model="$ctrl.input.cost" ng-change="$ctrl.searchRecommendations($ctrl.input)">
+          <option value="0">0</option>
+          <option value="5">$5 and less</option>
+          <option value="10">$10 and less</option>
+          <option value="20">$20 and less</option>
+          <option value="50">$50 and less</option>
+          <option value="100">$100 and less</option>
+          <option value="$100000000">$100+</option>
         </select>
       </form>
       <form>Duration: 
-        <select class="duration-selection">
+        <select class="duration-selection" ng-model="$ctrl.input.duration" ng-change="$ctrl.searchRecommendations($ctrl.input)">
           <option value="short">Short</option><br>
           <option value="medium">Medium</option><br>
           <option value="long">Long</option>
         </select>
       </form>
-      <form class="intensity-selection">Intensity: 
-        <input type="radio" name="intensity-value" value="1">1
-        <input type="radio" name="intensity-value" value="2">2
-        <input type="radio" name="intensity-value" value="3">3
-        <input type="radio" name="intensity-value" value="4">4
-        <input type="radio" name="intensity-value" value="5">5
+      <form class="intensity-selection" >Intensity: 
+        <input type="radio" name="intensity-value" value="1" ng-model="$ctrl.input.intensity" ng-change="$ctrl.searchRecommendations($ctrl.input)">1
+        <input type="radio" name="intensity-value" value="2" ng-model="$ctrl.input.intensity" ng-change="$ctrl.searchRecommendations($ctrl.input)">2
+        <input type="radio" name="intensity-value" value="3" ng-model="$ctrl.input.intensity" ng-change="$ctrl.searchRecommendations($ctrl.input)">3
+        <input type="radio" name="intensity-value" value="4" ng-model="$ctrl.input.intensity" ng-change="$ctrl.searchRecommendations($ctrl.input)">4
+        <input type="radio" name="intensity-value" value="5" ng-model="$ctrl.input.intensity" ng-change="$ctrl.searchRecommendations($ctrl.input)">5
       </form>
   </div>
   <div class="top-activity-desc">Top activities for your location:</div>
