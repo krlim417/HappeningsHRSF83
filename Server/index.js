@@ -34,10 +34,12 @@ app.post('/save', (request, response) => {
   });
 });
 
-app.listen(port, (err) => {
+var server = app.listen(port, (err) => {
   if (err) {
     console.log('something bad happened', err);
   } else {
     console.log(`server is listening on ${port}`);
   }
 });
+
+module.exports = server;
