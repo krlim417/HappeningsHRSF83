@@ -33,11 +33,11 @@
   <div ng-repeat="activity in $ctrl.recommendations">
     <div class="activity-item">
       <div class="name-likes">
-        <span class="activity-name">{{activity.name}}</span>
+        <span class="activity-name" ng-click="changeView('event')">{{activity.name}}</span>
         <span class="activity-likes">Likes: {{activity.likes}}</span>
       </div>
       <div class="image-description">
-        <span><img class="activity-image" src={{activity.imgUrl}}></span>
+        <span><img class="activity-image" src={{activity.imgUrl}} ng-click="changeView('event')"></span>
         <span class="activity-description">{{activity.description}}</span>
       </div>
     </div>

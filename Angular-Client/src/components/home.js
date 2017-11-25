@@ -1,7 +1,9 @@
 angular.module('app')
 
   .component('home', {
-    bindings: {},
+    bindings: {
+      changeView: '<',
+    },
     controller: function homeCtrl(landingRedirector, search) {
       this.recommendations = landingRedirector.result;
       this.input = {
