@@ -4,6 +4,7 @@ angular.module('app')
       event: '<',
     },
     controller: () => {
+    	let post = {};
     },
     templateUrl: '../../templates/event.html',
   });
