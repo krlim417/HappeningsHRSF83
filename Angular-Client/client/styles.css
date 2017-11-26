@@ -244,3 +244,45 @@ li {
   border-color: #d5e1df;
   color: black;
 }
+
+/*
+  ========================================
+  create.html
+  ========================================
+*/
+
+.create {
+  margin-top: 50px;
+}
+
+
+.create-submit-button {
+  background-color: #94dbea;
+  border-color: #d5e1df;
+}
+
+.create-submit-button:hover,
+.create-submit-button:focus,
+.create-submit-button:active,
+.create-submit-button:target {
+  background-color: #94dbea;
+  border-color: #d5e1df;
+  color: black;
+}
+
+/*
+  ========================================
+  confirm.html
+  ========================================
+*/
+
+.confirm {
+  margin-top: 150px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.confirm-to-home {
+  margin-right: 20px;
+  text-align: right;
+}
