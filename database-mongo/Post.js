@@ -97,9 +97,6 @@ module.exports = Post;
 module.exports.fetchTopFive = fetchTopFive;
 module.exports.search = search;
 module.exports.save = save;
-<<<<<<< HEAD
 module.exports.fetchEventByReference = fetchEventByReference;
-=======
->>>>>>> Add like and dislike functionality to event info page
 module.exports.like = like;
 module.exports.deleteNSave = deleteNSave;
