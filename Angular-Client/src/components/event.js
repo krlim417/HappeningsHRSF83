@@ -4,6 +4,7 @@ angular.module('app')
       event: '<',
     },
     controller: () => {
+      this.test = console.log('event in event', event);
     },
-    templateUrl: '../../templates/event.html',
+    templateUrl: '/src/templates/event.html',
   });

@@ -1,17 +1,17 @@
 <div>
- <h1>Event Title</h1> <buttom>Like!</buttom>
+ <h1>{{$ctrl.event.name}}</h1> <buttom>Like!</buttom>
     <form> Ratings:
-      <li>Overall Rating: </li>
-      <li>Category: </li>
-      <li>Cost: </li>
-      <li>Intensity: </li>
-      <li>Likes: </li>
+      <li>Cost: {{$ctrl.event.cost}} </li>
+      <li>Intensity: {{$ctrl.event.intensity}} </li>
+      <li>Likes: {{$ctrl.event.likes}} </li>
     </form>
   <div>
-    Event Image here
+    <span>
+      <img class="activity-image" src={{$ctrl.event.imgUrl}}>
+    </span>
   </div>
   <div>
-    Event Description here
+    {{$ctrl.event.description}}
   </div>
   <buttom>Home</buttom>
 </div>
