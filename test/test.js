@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
-const server = require('../Server/index.js');
+const server = require('../server');
+const request = require('supertest');
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -54,8 +55,36 @@ describe('Database Tests', function () {
       });
     });
   });
+
+  describe('Server tests', () => {
+    it('Should return a status code of 200 for a GET request to /', (done) => {
+      request(server)
+        .get('/')
+        .expect(200, done);
+    });
+
+    it('should return a status code of 404 for all other GET requests', (done) => {
+      request(server)
+        .get('/foo/bar')
+        .expect(404, done);
+    });
+
+      it('Should return a status code of 200 for a POST request to /home', (done) => {
+      request(server)
+        .post('/home')
+        .expect(200, done);
+    });
+
+    it('Should return a status code of 404 for all other POST requests', (done) => {
+      request(server)
+        .post('/foo/bar')
+        .expect(404, done);
+     });
+  });
+
   // After all tests are finished drop database and close connection
   after(function (done) {
+    server.close();
     mongoose.connection.db.dropDatabase(function () {
       mongoose.connection.close(done);
     });
