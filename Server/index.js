@@ -47,10 +47,7 @@ app.post('/save', (request, response) => {
 });
 
 app.post('/like', (req, res) => {
-  req.on('data', (chunk) => {
-    const data = JSON.parse(chunk);
-    db.like(data.name, data.likes);
-  });
+  db.like(req.body._id, req.body.likes);
 }); 
 
 

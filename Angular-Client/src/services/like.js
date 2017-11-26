@@ -1,4 +1,6 @@
-angular.module('app').service('like', ($http) => {
-  this.adjust = (name) => {
-    $http.post('/like', name);
-  };
+angular.module('app')
+  .service('like', function likes($http) {
+    this.adjust = (event) => {
+      $http.post('/like', event);
+    };
+  });
