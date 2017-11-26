@@ -1,5 +1,5 @@
 angular.module('app')
-  .service('search', function go($http, landingRedirector) {
+  .service('search', function go($http, landingRedirector, confirmRedirector) {
     this.filter = (input, callback) => {
       $http.get(`/search/${landingRedirector.city}/${input.value}/${input.cost}/${input.duration}/${input.intensity}`)
         .then((response) => {
@@ -15,7 +15,8 @@ angular.module('app')
         .then((response) => {
           console.log('Successfully saved your post!', response);
           landingRedirector.redirectHome(post.city);
-          cb('home');
+          confirmRedirector.redirectConfirm(response.data);
+          cb('confirm');
         })
         .catch((err) => {
           console.log(err);
