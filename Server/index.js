@@ -4,7 +4,7 @@ const path = require('path');
 const db = require('../database-mongo/Post.js');
 const ref = require('../Helpers/refGenerator.js');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, '/../Angular-Client')));
 app.use(express.static(path.join(__dirname, '/../node_modules')));
@@ -46,7 +46,12 @@ app.post('/save', (request, response) => {
   });
 });
 
-var server = app.listen(port, (err) => {
+app.post('/like', (req, res) => {
+  db.like(req.body._id, req.body.likes);
+}); 
+
+
+const server = app.listen(port, (err) => {
   if (err) {
     console.log('something bad happened', err);
   } else {
