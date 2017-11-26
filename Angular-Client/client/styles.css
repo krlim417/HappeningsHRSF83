@@ -1,18 +1,151 @@
+/*
+  ========================================
+  On all pages
+  ========================================
+*/
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url('./canoe.jpeg'); 
+  background-position: 0px -10px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.layer {
+  background-color: hsla(360, 100%, 100%, 0.6);
+  position: fixed;
+  width: 84%;
+  height: 100%;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: scroll;
+}
+
+ul {
+  top: 0;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #94dbea;
+}
+
+li {
+  margin-right: 30px;
+  line-height: 40px;
+}
+
+.nav {
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  z-index: 1;
+}
+
+.logo {
+  display: inline-block;
+  line-height: 40px;
+  font-size: 15pt;
+  font-weight: 600;
+  color: hsla(360, 100%, 100%, 1);
+  margin-left: 30px;
+  float: left;
+}
+
+.nav-edit,
+.nav-add {
+  float: right;
+  color: hsla(360, 100%, 100%, 1);
+}
+
+/*
+  ========================================
+  Landing.html
+  ========================================
+*/
+
 .landing {
-  padding-top: 20px;
+  padding-top: 50px;
 }
 
-.home {
-  padding-top: 20px;
+.landing-desc {
+  font-size: 25px;
+  text-align: center;
 }
 
-.top-activity-desc {
-  margin-top: 25px;
+.landing-desc {
+  margin-top: 50px;
+  padding-bottom: 30px;
+}
+
+.landing-form {
+  font-size: 20px;
+  text-align: center;
+}
+
+.city-input {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.begin-button {
+  background-color: #94dbea;
+  border-color: #d5e1df;
+}
+
+.begin-button:hover,
+.begin-button:focus,
+.begin-button:active,
+.begin-button:target {
+  background-color: #94dbea;
+  border-color: #d5e1df;
+  color: black;
+}
+
+/*
+  ========================================
+  Home.html
+  ========================================
+*/
+
+.filter-div {
+  border-bottom: 1px solid black;
+}
+
+.filter-desc {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 65px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.filter-items {
+  margin-left: 30px;  
   margin-bottom: 30px;
 }
 
-.search-results {
-  margin-top: 20px;
+.top-activity-desc {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  margin-left: 15px;
 }
 
 .name-likes {
@@ -24,7 +157,7 @@
   float: left;
   padding-left: 30px;
   padding-right: 60px;
-  padding-bottom: 30px;
+  padding-bottom: 35px;
 }
 
 .activity-image {
@@ -48,6 +181,66 @@
 
 .activity-likes {
   display: block;
-  padding-left: 10px;
+  border-radius: 5px;
+  margin-left: 30px;
   float: right;
+}
+
+/*
+  ========================================
+  Edit.html
+  ========================================
+*/
+
+.edit {
+  padding-top: 50px;
+}
+
+/*
+  ========================================
+  checkReference.html
+  ========================================
+*/
+
+.check-reference {
+  margin-top: 50px;
+}
+
+.reference-desc {
+  font-size: 25px;
+  text-align: center;
+}
+
+.reference-desc {
+  margin-top: 25px;
+  padding-bottom: 30px;
+}
+
+.reference-form {
+  font-size: 20px;
+  text-align: center;
+}
+
+.reference-error {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.reference-input {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.reference-button {
+  background-color: #94dbea;
+  border-color: #d5e1df;
+}
+
+.reference-button:hover,
+.reference-button:focus,
+.reference-button:active,
+.reference-button:target {
+  background-color: #94dbea;
+  border-color: #d5e1df;
+  color: black;
 }

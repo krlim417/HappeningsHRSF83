@@ -1,7 +1,7 @@
 <div class="landing">
   <div class="landing-desc">To start please enter your city:</div>
-  <form>
-    <input type="text" placeholder="City..." ng-model="$ctrl.input">
-    <button type="button" ng-click="$ctrl.handleClick()">Let's Begin</button>
+  <form class="landing-form">
+    <input class="city-input" type="text" placeholder="City..." ng-model="$ctrl.input" size="20">
+    <button class="btn btn-primary begin-button" ng-model="singleModel" type="button" ng-click="$ctrl.handleClick()">Let's Begin</button>
   </form>
 </div>
