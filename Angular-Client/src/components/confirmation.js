@@ -1,8 +1,14 @@
 angular.module('app')
 
   .component('confirmation', {
-    controller: function confirmCtrl() {
-      this.ref = 'san francisco#173528957';
+    bindings: {
+      changeView: '<',
+    },
+    controller: function confirmCtrl(confirmRedirector) {
+      this.ref = confirmRedirector.ref || '';
+      this.handleClick = () => {
+        this.changeView('home');
+      };
     },
     templateUrl: '/src/templates/confirmation.html',
   });

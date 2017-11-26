@@ -15,6 +15,7 @@ angular.module('app')
         address: '',
         intensity: 1,
         duration: '',
+        reference: '',
       };
       this.click = () => {
         search.save(this.post, this.changeView);
