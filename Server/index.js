@@ -4,7 +4,7 @@ const path = require('path');
 const db = require('../database-mongo/Post.js');
 const ref = require('../Helpers/refGenerator.js');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, '/../Angular-Client')));
 app.use(express.static(path.join(__dirname, '/../node_modules')));
