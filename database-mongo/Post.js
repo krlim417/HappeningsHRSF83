@@ -71,8 +71,24 @@ const fetchEventByReference = (eventReference, callback) => {
   });
 };
 
+const like = (name, value) => {
+  Post.update(
+    { _id : eventId },
+    { $set: { likes: value } },
+    { safe: true },
+    (err, raw) => {
+      if (err) { console.log('update failed'); }
+      console.log('the raw responce from mongo was', raw);
+    }
+  );
+};
+
 module.exports = Post;
 module.exports.fetchTopFive = fetchTopFive;
 module.exports.search = search;
 module.exports.save = save;
+<<<<<<< HEAD
 module.exports.fetchEventByReference = fetchEventByReference;
+=======
+module.exports.like = like;
+>>>>>>> Add like and dislike functionality to event info page
