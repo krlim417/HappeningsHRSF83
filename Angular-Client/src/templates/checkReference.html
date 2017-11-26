@@ -1,0 +1,9 @@
+<div class="check-reference">
+  <br>
+  <div class="reference-desc">To edit an event please enter your event reference number:</div>
+  <form class="reference-form">
+    <input class="reference-input" type="test" placeholder="Reference number..." ng-model="$ctrl.reference">
+    <button class="btn btn-primary reference-button" ng-model="singleModel" type="button" ng-click="$ctrl.handleClick()">Submit</button>
+  </form>
+  <p class="reference-error" ng-if="$ctrl.eventFound === '' && $ctrl.searched === true">There was no event with the reference number entered</p>
+</div>

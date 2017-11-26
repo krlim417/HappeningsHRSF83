@@ -27,6 +27,16 @@ app.get('/search/:city/:input/:cost/:duration/:intencity', (request, responce) =
   });
 });
 
+app.post('/edit', (request, response) => {
+  db.fetchEventByReference(request.body.reference, (result) => {
+    if (result === false) {
+      response.send(false);
+    } else {
+      response.send(result);
+    }
+  });
+});
+
 app.post('/save', (request, response) => {
   request.body.reference = ref(request.body.city);
   db.save(request.body, () => {
