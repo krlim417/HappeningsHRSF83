@@ -46,7 +46,15 @@ app.post('/save', (request, response) => {
   });
 });
 
-var server = app.listen(port, (err) => {
+app.post('/like', (req, res) => {
+  req.on('data', (chunk) => {
+    const data = JSON.parse(chunk);
+    db.like(data.name, data.likes);
+  });
+}); 
+
+
+const server = app.listen(port, (err) => {
   if (err) {
     console.log('something bad happened', err);
   } else {

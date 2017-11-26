@@ -1,5 +1,5 @@
 <div>
- <h1>{{$ctrl.event.name}}</h1> <buttom>Like!</buttom>
+ <h1>{{$ctrl.event.name}}</h1> <buttom ng-click="$ctrl.like()">Like</buttom> <button ng-click="$ctrl.dislike()" >Dislike</button>
       <li>Cost: {{$ctrl.event.cost}} </li>
       <li>Intensity: {{$ctrl.event.intensity}} </li>
       <li>Likes: {{$ctrl.event.likes}} </li>

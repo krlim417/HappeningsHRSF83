@@ -71,6 +71,20 @@ const fetchEventByReference = (eventReference, callback) => {
   });
 };
 
+const like = (name, value) => {
+  Post.update(
+    { Name: name },
+    { Likes: value },
+    { safe: true },
+    (err, raw) => {
+      if (err) { console.log('update failed'); }
+      console.log('the raw responce from mongo was', raw);
+    }
+  );
+};
+
+
+module.exports.like = like;
 module.exports = Post;
 module.exports.fetchTopFive = fetchTopFive;
 module.exports.search = search;
