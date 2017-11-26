@@ -2,9 +2,10 @@ angular.module('app')
   .component('event', {
     bindings: {
       event: '<',
+      changeView: '<',
     },
-    controller: () => {
-      this.test = console.log('event in event', event);
+    controller: (landingRedirector) => {
+      this.redirect = landingRedirector.redirectHome;
     },
     templateUrl: '/src/templates/event.html',
   });
