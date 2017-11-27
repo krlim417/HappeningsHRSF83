@@ -2,12 +2,12 @@
   <div class="filter-div">
     <div class="filter-desc">Filters:</div>
       <div class="filter-items">
-        <form class="form-group row">
-          <label class="col-2 col-form-label">Search for an Activity:</label>
+        <form class="form-group-xs row">
+          <label class="col-2 col-form-label-xs">Search for an Activity:</label>
           <input type="text" ng-model="$ctrl.input.value" ng-change="$ctrl.searchRecommendations($ctrl.input)" ng-click="$ctrl.input.value = null" class="col-5">
         </form>
-        <form class="form-group row">
-          <label class="col-2 col-form-label">Cost:</label> 
+        <form class="form-group-xs row">
+          <label class="col-2 col-form-label-xs">Cost:</label> 
           <select class="dropdown" ng-model="$ctrl.input.cost" ng-change="$ctrl.searchRecommendations($ctrl.input)" class="col-5">
             <option value="0">0</option>
             <option value="5">$5 and less</option>
@@ -18,16 +18,16 @@
             <option value="100000000">$100+</option>
           </select>
         </form>
-        <form class="form-group row">
-          <label class="col-2 col-form-label">Duration: </label> 
+        <form class="form-group-xs row">
+          <label class="col-2 col-form-label-xs">Duration: </label> 
           <select class="duration-selection" ng-model="$ctrl.input.duration" ng-change="$ctrl.searchRecommendations($ctrl.input)" class="col-5">
             <option value="short">Short</option><br>
             <option value="medium">Medium</option><br>
             <option value="long">Long</option>
           </select>
         </form>
-        <form class="form-group row">
-          <label class="col-2 col-form-label">Intensity:</label> 
+        <form class="form-group-xs row">
+          <label class="col-2 col-form-label-xs">Intensity:</label> 
           <input type="radio" name="intensity-value" value="1" ng-model="$ctrl.input.intensity" ng-change="$ctrl.searchRecommendations($ctrl.input)">1
           <input type="radio" name="intensity-value" value="2" ng-model="$ctrl.input.intensity" ng-change="$ctrl.searchRecommendations($ctrl.input)">2
           <input type="radio" name="intensity-value" value="3" ng-model="$ctrl.input.intensity" ng-change="$ctrl.searchRecommendations($ctrl.input)">3
