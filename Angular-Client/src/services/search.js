@@ -1,8 +1,9 @@
 angular.module('app')
   .service('search', function go($http, landingRedirector, confirmRedirector) {
     /**
-     * @param  {} input
-     * @param  {} callback
+     * Filter function that searches for events based on inputs and displays them on the home page
+     * @param  {} input - the values of the search input, defaults in home.js
+     * @param  {} callback - function used to set what is displayed to the results of the search
      */
     this.filter = (input, callback) => {
       $http.get(`/search/${landingRedirector.city}/${input.value}/${input.cost}/${input.duration}/${input.intensity}`)
