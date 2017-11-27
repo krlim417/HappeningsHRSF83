@@ -4,8 +4,7 @@ angular.module('app')
       event: '<',
       changeView: '<',
     },
-    controller: function eventCtrl(landingRedirector, like) {
-      this.redirect = landingRedirector.redirectHome;
+    controller: function eventCtrl(like) {
       this.like = () => {
         this.event.likes = this.event.likes + 1;
         like.adjust(this.event); 
