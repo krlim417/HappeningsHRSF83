@@ -80,6 +80,19 @@ describe('Database Tests', function () {
         .post('/foo/bar')
         .expect(404, done);
      });
+
+    it("Should return a status code of 404 for a GET request to /search without parameters", done => {
+      request(server)
+        .get("/search")
+        .expect(404, done);
+    });
+
+  it("Should return a status code of 200 for a GET request to /search with parameters", done => {
+    request(server)
+      .get("/search/canada/fishing/10/short/1")
+      .expect(200, done);
+  });
+
   });
 
   // After all tests are finished drop database and close connection
