@@ -33,7 +33,7 @@
       </div>
     </div>
   <div class="top-activity-desc">Top activities for your location:</div>
-    <div class="event-item" ng-repeat="activity in $ctrl.recommendations">
+    <div class="event-item" ng-repeat="activity in $ctrl.recommendations | orderBy:'{likes: -1}'">
     <table>
       <tr class="name-likes">
         <td class="activity-name" ng-click="$ctrl.changeView('event', activity)">{{activity.name}}
