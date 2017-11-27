@@ -1,5 +1,9 @@
 angular.module('app')
   .service('search', function go($http, landingRedirector, confirmRedirector) {
+    /**
+     * @param  {} input
+     * @param  {} callback
+     */
     this.filter = (input, callback) => {
       $http.get(`/search/${landingRedirector.city}/${input.value}/${input.cost}/${input.duration}/${input.intensity}`)
         .then((response) => {

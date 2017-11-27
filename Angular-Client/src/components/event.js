@@ -4,6 +4,10 @@ angular.module('app')
       event: '<',
       changeView: '<',
     },
+    /**
+     * Controller function for the event component
+     * @param  {} like - service used to adjust like values
+     */
     controller: function eventCtrl(like) {
       this.like = () => {
         this.event.likes = this.event.likes + 1;
