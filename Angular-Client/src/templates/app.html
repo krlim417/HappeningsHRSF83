@@ -9,10 +9,10 @@
   <div class="layer" ng-switch on="$ctrl.view">
     <landing changeTheView="$ctrl.changeView()" ng-switch-when="landing" change-view="$ctrl.changeView"></landing>
     <home ng-switch-when="home" change-view="$ctrl.changeView"></home>
-    <create ng-switch-when="create" change-view="$ctrl.changeView"></create>
+    <create ng-switch-when="create" change-view="$ctrl.changeView" view="$ctrl.view"></create>
     <confirmation ng-switch-when="confirm" change-view="$ctrl.changeView"></confirmation>
     <event ng-switch-when="event" event="$ctrl.current" change-view="$ctrl.changeView"></event>
     <check-reference ng-switch-when="checkReference" change-view="$ctrl.changeView"></check-reference>
-    <create ng-switch-when="edit" change-view="$ctrl.changeView"></create>
+    <create ng-switch-when="edit" change-view="$ctrl.changeView" view="$ctrl.view"></create>
   </div>
 </div>
