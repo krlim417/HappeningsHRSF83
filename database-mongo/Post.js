@@ -25,6 +25,11 @@ const postSchema = new mongoose.Schema({
 
 const Post = mongoose.model('Post', postSchema);
 
+/**
+ * This function does a database search for the top five most liked event for the city that got passed in. On success, it should pass result as an argument to the callback that was passed in.
+ * @param  {string} city - the city to look for to fetch the top five events
+ * @param  {function} callback - the callback specified in the initial call of fetchTopFive
+ */
 const fetchTopFive = (city, callback) => {
   Post.find( { city: { $regex: `${city}`, $options: 'i' } }).limit(5).sort({ likes: -1 }).exec((err, result) => {
     if (err) {
@@ -56,6 +61,11 @@ const search = (input, callback) => {
     });
 };
 
+/**
+ * Creates and saves an event document in the database from the user's input on the create page.
+ * @param  {object} input - the event data to save to the database
+ * @param  {function} cb - the callback specified in the initial call of save
+ */
 const save = (input, cb) => {
   console.log('post has been deleted, now saving');
   Post.create(input, function (err) {
@@ -67,6 +77,11 @@ const save = (input, cb) => {
   });
 };
 
+/**
+ * Looks for any event with the same reference as the one that got passed into the function. If it is found, it will return the result. If it isn't found will return false to show that the reference the user inputted did not have any matches.
+ * @param  {object} eventReference - contains the reference hash which will be used to find a particular event
+ * @param  {function} callback - the callback specified in the initial call of fetchEventByReference
+ */
 const fetchEventByReference = (eventReference, callback) => {
   Post.find({ reference: `${eventReference}` }).exec((err, result) => {
     if (err) {
@@ -94,6 +109,11 @@ const like = (eventId, value) => {
   );
 };
 
+/**
+ * updateEvent function that updates the event's data once the user does an edit
+ * @param  {object} input - the user's event data from their edit
+ * @param  {Function} cb - the callback specified in the initial call of updateEvent
+ */
 const updateEvent = (input, cb) => {
   Post.findOneAndUpdate({ reference: `${input.reference}` }, { $set: input}).exec(function(err, data) {
     if (err) {

@@ -17,7 +17,7 @@ app.get('/', (request, response) => {
 
 /**
  * This is used by pages that want to render the home view. It fetches the top five events based on likes for a certain city and returns the data to the client.
- * @param  {object} request - what is sent with the post request and contains the location of the events to display
+ * @param  {object} request - what is sent with the post request and contains the location of the events to look for in the database
  * @param  {object} response - what is sent back in response to the get post request and contains at most five event data for the user selected city.
  */
 app.post('/home', (request, response) => {
@@ -25,6 +25,7 @@ app.post('/home', (request, response) => {
     response.send(result);
   });
 });
+
 /**
  * Function that is called when a get request is recieved to the /search route
  * @param  {object} request - what is sent with the get request and contains the search parameters
@@ -52,8 +53,17 @@ app.post('/edit', (request, response) => {
   });
 });
 
+/**
+ * The /save route handles two events:
+ One is when the user chooses to create an event. When that occurs, the data is sent to the server without any reference since it is something new. The server will create a hash for this event and then store all of the data to the database.
+
+ The second is when the user chooses to edit an event. The user will already have a reference so the server will go to the database and delete the old data, and save a completely new one.
+
+ After it has handled any of the two events above, it will return to the client a reference. 
+ * @param  {object} request - what is sent with the post request and cotanins the event data the user wants to save to the database
+ * @param  {function} response - what is sent back from the post request and contains the reference of the event
+ */
 app.post('/save', (request, response) => {
-  console.log('REQUEST BODY SAVE: ', request.body);
   if (!request.body.reference) {
     console.log('post has no reference', request.body);
     request.body.reference = ref(request.body.city);
@@ -67,6 +77,7 @@ app.post('/save', (request, response) => {
     });
   }
 });
+
 /**
  * Function that is called when there is a post request recieved by the like route of the server
  * @param  {object} request - what is sent with the post request and contains the event being modified

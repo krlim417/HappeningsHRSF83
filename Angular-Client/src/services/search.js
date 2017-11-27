@@ -15,6 +15,11 @@ angular.module('app')
           console.log('Failed to send get request');
         });
     };
+    /**
+     * Save function that makes a post request to the server with the user's inputted data.
+     * @param  {object} post - the data the user inputted
+     * @param  {function} cb - uses the function defined when initially called and passes 'confirm' to it
+     */
     this.save = function save(post, cb) {
       $http.post('/save', post)
         .then((response) => {
