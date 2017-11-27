@@ -6,7 +6,7 @@ angular.module('app')
     },
     /**
      * Controller function for the event component
-     * @param  {} like - service used to adjust like values
+     * @param  {object} like - service used to adjust like values
      */
     controller: function eventCtrl(like) {
       this.like = () => {

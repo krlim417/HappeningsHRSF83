@@ -21,6 +21,12 @@ app.post('/home', (request, response) => {
   });
 });
 
+/**
+ * Function that is called when a get request is recieved to the /search route
+ * @param  {object} request - what is sent with the get request and contains the search parameters
+ * @param  {object} responce - what is sent back in responce to the get request and contains the search results
+ */
+
 app.get('/search/:city/:input/:cost/:duration/:intensity', (request, responce) => {
   console.log(request.params);
   db.search(request.params, (results) => {
@@ -53,10 +59,14 @@ app.post('/save', (request, response) => {
     });
   }
 });
-
-app.post('/like', (req, res) => {
-  db.like(req.body._id, req.body.likes);
-  res.send();
+/**
+ * Function that is called when there is a post request recieved by the like route of the server
+ * @param  {object} request - what is sent with the post request and contains the event being modified
+ * @param  {object} responce - what is sent back from the post request
+ */
+app.post('/like', (request, responce) => {
+  db.like(request.body._id, request.body.likes);
+  responce.send();
 });
 
 const server = app.listen(port, (err) => {

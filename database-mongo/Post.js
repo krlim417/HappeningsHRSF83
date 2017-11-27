@@ -35,8 +35,8 @@ const fetchTopFive = (city, callback) => {
 };
 /**
  * Search function that queries the database for activities with given search criteria
- * @param  {} input - the search criteria passed down by the home component
- * @param  {} callback - function used to send back the results of the query
+ * @param  {object} input - the search criteria passed down by the home component
+ * @param  {function} callback - function used to send back the results of the query
  */
 const search = (input, callback) => {
   console.log('input in search', input);
@@ -79,8 +79,8 @@ const fetchEventByReference = (eventReference, callback) => {
 };
 /**
  * Like function that increases the like value of the event in the database
- * @param  {} eventId - the id of the event that whose like value is to be changed
- * @param  {} value - the value of the event's like value will be changed to
+ * @param  {number} eventId - the id of the event that whose like value is to be changed
+ * @param  {number} value - the value of the event's like value will be changed to
  */
 const like = (eventId, value) => {
   Post.update(
