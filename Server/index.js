@@ -39,6 +39,7 @@ app.post('/edit', (request, response) => {
 });
 
 app.post('/save', (request, response) => {
+  console.log('REQUEST BODY SAVE: ', request.body)
   if (!request.body.reference) {
     request.body.reference = ref(request.body.city);
   }
