@@ -1,5 +1,6 @@
-<div>
- <h1>{{$ctrl.event.name}}</h1> <button ng-click="$ctrl.like()">Like</button> <button ng-click="$ctrl.dislike()">Dislike</button>
+<div class="event">
+ <h1>{{$ctrl.event.name}}</h1><button ng-click="$ctrl.dislike()" class="btn-xs btn-danger activity-likes">Dislike</button><button ng-click="$ctrl.like()" class="btn-xs btn-danger activity-likes">Like</button>
+      
       <li>Cost: {{$ctrl.event.cost}} </li>
       <li>Intensity: {{$ctrl.event.intensity}} </li>
       <li>Likes: {{$ctrl.event.likes}} </li>
@@ -12,5 +13,4 @@
   <div>
     {{$ctrl.event.description}}
   </div>
-  <buttom ng-click="$ctrl.changeView('home')">Home</buttom>
 </div>
