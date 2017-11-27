@@ -97,4 +97,4 @@ module.exports.search = search;
 module.exports.save = save;
 module.exports.fetchEventByReference = fetchEventByReference;
 module.exports.like = like;
-
+module.exports.deleteNSave = deleteNSave;
