@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('../database-mongo/Post.js');
 const ref = require('../Helpers/refGenerator.js');
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -38,6 +39,7 @@ app.post('/edit', (request, response) => {
 });
 
 app.post('/save', (request, response) => {
+  console.log('REQUEST BODY SAVE: ', request.body)
   if (!request.body.reference) {
     request.body.reference = ref(request.body.city);
   }
@@ -49,7 +51,6 @@ app.post('/save', (request, response) => {
 app.post('/like', (req, res) => {
   db.like(req.body._id, req.body.likes);
 }); 
-
 
 const server = app.listen(port, (err) => {
   if (err) {

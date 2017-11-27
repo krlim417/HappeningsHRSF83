@@ -1,9 +1,10 @@
 angular.module('app')
   .component('create', {
     bindings: {
+      view: '<',
       changeView: '<',
     },
-    controller: function createCtrl(search) {
+    controller: function createCtrl(search, findEventByReference) {
       this.post = {
         name: '',
         city: '',
@@ -17,8 +18,27 @@ angular.module('app')
         duration: '',
         reference: '',
       };
+
+      this.postEdit = {
+        name: '' || findEventByReference.editEventData.name,
+        city: '' || findEventByReference.editEventData.city,
+        date: '' || findEventByReference.editEventData.date,
+        time: '' || findEventByReference.editEventData.time,
+        description: '' || findEventByReference.editEventData.description,
+        imgUrl: '' || findEventByReference.editEventData.imgUrl,
+        cost: 0 || findEventByReference.editEventData.cost,
+        address: '' || findEventByReference.editEventData.address,
+        intensity: '' || findEventByReference.editEventData.intensity,
+        duration: '' || findEventByReference.editEventData.duration,
+        reference: '' || findEventByReference.editEventData.reference,
+      };
+
       this.click = () => {
-        search.save(this.post, this.changeView);
+        if (this.view === 'create') {
+          search.save(this.post, this.changeView);
+        } else if (this.view === 'edit') {
+          search.save(this.postEdit, this.changeView);
+        }
       };
     },
     templateUrl: '/src/templates/create.html',
