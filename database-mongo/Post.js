@@ -33,7 +33,11 @@ const fetchTopFive = (city, callback) => {
     callback(result);
   });
 };
-
+/**
+ * Search function that queries the database for activities with given search criteria
+ * @param  {} input - the search criteria passed down by the home component
+ * @param  {} callback - function used to send back the results of the query
+ */
 const search = (input, callback) => {
   console.log('input in search', input);
   Post.find({
