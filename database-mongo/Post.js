@@ -94,7 +94,7 @@ const like = (eventId, value) => {
   );
 };
 
-const update = (input, cb) => {
+const updateEvent = (input, cb) => {
   Post.findOneAndUpdate({ reference: `${input.reference}` }, { $set: input}).exec(function(err, data) {
     if (err) {
       console.log('Did not increment times searched.');
@@ -110,4 +110,4 @@ module.exports.search = search;
 module.exports.save = save;
 module.exports.fetchEventByReference = fetchEventByReference;
 module.exports.like = like;
-module.exports.update = update;
+module.exports.updateEvent = updateEvent;
