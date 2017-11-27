@@ -86,12 +86,15 @@ const like = (name, value) => {
   );
 };
 
-const deleteNSave = (input, cb) => {
-  Post.find({ reference: `${input.reference}` })
-    .remove(cb);
+const update = (input, cb) => {
+  Post.findOneAndUpdate({ reference: `${input.reference}` }, { $set: input}).exec(function(err, data) {
+    if (err) {
+      console.log('Did not increment times searched.');
+    }
+    console.log('Incremented times searched by one.');
+    cb();
+  });
 };
-
-// save(input, cb)
 
 module.exports = Post;
 module.exports.fetchTopFive = fetchTopFive;
@@ -99,4 +102,4 @@ module.exports.search = search;
 module.exports.save = save;
 module.exports.fetchEventByReference = fetchEventByReference;
 module.exports.like = like;
-module.exports.deleteNSave = deleteNSave;
+module.exports.update = update;

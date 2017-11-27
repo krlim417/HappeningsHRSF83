@@ -48,10 +48,9 @@ app.post('/save', (request, response) => {
     });
   } else {
     console.log('post has reference', request.body);
-    db.deleteNSave(request.body, db.save(request.body, () => {
-      console.log('post has been deleted, now saving');
+    db.update(request.body, () => {
       response.send(request.body.reference);
-    }));
+    });
   }
 });
 

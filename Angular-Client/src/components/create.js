@@ -20,17 +20,17 @@ angular.module('app')
       };
 
       this.postEdit = {
-        name: '' || findEventByReference.editEventData.name,
-        city: '' || findEventByReference.editEventData.city,
-        date: '' || findEventByReference.editEventData.date,
-        time: '' || findEventByReference.editEventData.time,
-        description: '' || findEventByReference.editEventData.description,
-        imgUrl: '' || findEventByReference.editEventData.imgUrl,
-        cost: 0 || findEventByReference.editEventData.cost,
-        address: '' || findEventByReference.editEventData.address,
-        intensity: '' || findEventByReference.editEventData.intensity,
-        duration: '' || findEventByReference.editEventData.duration,
-        reference: '' || findEventByReference.editEventData.reference,
+        name: findEventByReference.editEventData.name || '',
+        city: findEventByReference.editEventData.city || '',
+        date: findEventByReference.editEventData.date || '',
+        time: findEventByReference.editEventData.time || '',
+        description: findEventByReference.editEventData.description || '',
+        imgUrl: findEventByReference.editEventData.imgUrl || '',
+        cost: findEventByReference.editEventData.cost || 0,
+        address: findEventByReference.editEventData.address || '',
+        intensity: findEventByReference.editEventData.intensity || 1,
+        duration: findEventByReference.editEventData.duration || '',
+        reference: findEventByReference.editEventData.reference || '',
       };
 
       this.click = () => {
