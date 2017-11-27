@@ -8,7 +8,7 @@ angular.module('app')
       this.recommendations = landingRedirector.result;
       this.input = {
         value: 'Anything!',
-        cost: 'free',
+        cost: '0',
         duration: 'Short',
         intensity: '1',
       };

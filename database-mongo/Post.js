@@ -35,18 +35,21 @@ const fetchTopFive = (city, callback) => {
 };
 
 const search = (input, callback) => {
+  console.log('input in search', input)
   Post.find({
-    city: `${input.city}`,
+    city: { $regex: `${input.city}`, $options: 'i' },
     name: { $regex: `${input.input}`, $options: 'i' },
-    cost: { $lt: `${input.cost}`},
+    cost: { $lt: `${input.cost}` },
     duration: { $regex: `${input.duration}`, $options: 'i' },
-    intensity: `${input.intensity}`,
-  }).sort({ likes: -1 }).exec((err, result) => {
-    if (err) {
-      console.log('Search failed');
-    }
-    callback(result);
-  });
+    intensity: `${input.intensity}`
+  })
+    .sort({ likes: -1 })
+    .exec((err, result) => {
+      if (err) {
+        console.log('Search failed', err);
+      }
+      callback(result);
+    });
 };
 
 const save = (input, cb) => {
@@ -87,8 +90,5 @@ module.exports = Post;
 module.exports.fetchTopFive = fetchTopFive;
 module.exports.search = search;
 module.exports.save = save;
-<<<<<<< HEAD
 module.exports.fetchEventByReference = fetchEventByReference;
-=======
 module.exports.like = like;
->>>>>>> Add like and dislike functionality to event info page
