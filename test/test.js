@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const server = require('../server');
+const server = require('../Server/index.js');
 const request = require('supertest');
 const mongoose = require('mongoose');
 
