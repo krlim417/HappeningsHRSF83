@@ -77,8 +77,12 @@ const fetchEventByReference = (eventReference, callback) => {
     }
   });
 };
-
-const like = (name, value) => {
+/**
+ * Like function that increases the like value of the event in the database
+ * @param  {} eventId - the id of the event that whose like value is to be changed
+ * @param  {} value - the value of the event's like value will be changed to
+ */
+const like = (eventId, value) => {
   Post.update(
     { _id : eventId },
     { $set: { likes: value } },
