@@ -57,8 +57,8 @@ const save = (input, cb) => {
   Post.create(input, function (err) {
     if (err) {
       throw err;
-      cb();
     } else {
+      cb();
     }
   });
 };
