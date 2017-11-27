@@ -4,11 +4,6 @@ angular.module('app')
     bindings: {
       changeView: '<',
     },
-    /**
-     * Controller: []
-     * @param  {[type]} findEventByReference [description]
-     * @return {[type]}                      [description]
-     */
     controller: function checkReferenceCtrl(findEventByReference) {
       this.searched = false;
       this.eventFound = '';
