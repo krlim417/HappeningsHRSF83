@@ -35,7 +35,7 @@ const fetchTopFive = (city, callback) => {
 };
 
 const search = (input, callback) => {
-  console.log('input in search', input)
+  console.log('input in search', input);
   Post.find({
     city: { $regex: `${input.city}`, $options: 'i' },
     name: { $regex: `${input.input}`, $options: 'i' },
@@ -53,6 +53,7 @@ const search = (input, callback) => {
 };
 
 const save = (input, cb) => {
+  console.log('post has been deleted, now saving');
   Post.create(input, function (err) {
     if (err) {
       throw err;
@@ -87,9 +88,10 @@ const like = (name, value) => {
 
 const deleteNSave = (input, cb) => {
   Post.find({ reference: `${input.reference}` })
-    .remove(save(input, cb));
+    .remove(cb);
 };
 
+// save(input, cb)
 
 module.exports = Post;
 module.exports.fetchTopFive = fetchTopFive;

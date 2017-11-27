@@ -39,16 +39,19 @@ app.post('/edit', (request, response) => {
 });
 
 app.post('/save', (request, response) => {
-  console.log('REQUEST BODY SAVE: ', request.body)
+  console.log('REQUEST BODY SAVE: ', request.body);
   if (!request.body.reference) {
+    console.log('post has no reference', request.body);
     request.body.reference = ref(request.body.city);
     db.save(request.body, () => {
       response.send(request.body.reference);
     });
   } else {
-    db.deleteNSave(request.body, () => {
+    console.log('post has reference', request.body);
+    db.deleteNSave(request.body, db.save(request.body, () => {
+      console.log('post has been deleted, now saving');
       response.send(request.body.reference);
-    });
+    }));
   }
 });
 
