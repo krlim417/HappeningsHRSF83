@@ -65,7 +65,6 @@ const save = (input, cb) => {
 const fetchEventByReference = (eventReference, callback) => {
   Post.find({ reference: `${eventReference}` }).exec((err, result) => {
     if (err) {
-      console.log('Failed to retrieve the event based on reference.');
     } else if (result[0]) {
       callback(result);
     } else {
@@ -86,9 +85,16 @@ const like = (name, value) => {
   );
 };
 
+const deleteNSave = (input, cb) => {
+  Post.find({ reference: `${input.reference}` })
+    .remove(save(input, cb));
+};
+
+
 module.exports = Post;
 module.exports.fetchTopFive = fetchTopFive;
 module.exports.search = search;
 module.exports.save = save;
 module.exports.fetchEventByReference = fetchEventByReference;
 module.exports.like = like;
+

@@ -243,6 +243,7 @@ li {
 
 .create {
   margin-top: 50px;
+  margin-left: 10px;
 }
 
 
@@ -258,6 +259,12 @@ li {
   background-color: #94dbea;
   border-color: #d5e1df;
   color: black;
+}
+
+.create-titles {
+  color: white;
+  width: 100px;
+  background: black;
 }
 
 /*

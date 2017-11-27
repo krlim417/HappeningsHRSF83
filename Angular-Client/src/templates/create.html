@@ -1,8 +1,9 @@
 <div class="create">
   <div class="create-editor" ng-if="$ctrl.view === 'create'">
     <form>
-      <p>Event Name<br>
-        <input class="create-input" ng-model='$ctrl.post.name' type="text">{{ this.view === 'edit' ? findEventByReference.editEventData.name : '' }}</input><br>
+      <p>
+        <div class="create-titles">Event Name</div><br>
+        <input class="create-input" ng-model='$ctrl.post.name' type="text"></input><br>
         City<br>
         <input class="create-input" ng-model='$ctrl.post.city' type="text"></input><br>
         Date<br>
@@ -31,7 +32,7 @@
           <option value="medium">Medium</option>
           <option value="long">Long</option>
         </select><br>
-        <button class="create-submit-button"
+        <button class="create-submit-button btn btn-primary"
          ng-click='$ctrl.click()'>Save post</button>
       </p>
     </form>

@@ -42,15 +42,20 @@ app.post('/save', (request, response) => {
   console.log('REQUEST BODY SAVE: ', request.body)
   if (!request.body.reference) {
     request.body.reference = ref(request.body.city);
+    db.save(request.body, () => {
+      response.send(request.body.reference);
+    });
+  } else {
+    db.deleteNSave(request.body, () => {
+      response.send(request.body.reference);
+    });
   }
-  db.save(request.body, () => {
-    response.send(request.body.reference);
-  });
 });
 
 app.post('/like', (req, res) => {
   db.like(req.body._id, req.body.likes);
-}); 
+  res.send();
+});
 
 const server = app.listen(port, (err) => {
   if (err) {
