@@ -15,6 +15,11 @@ app.get('/', (request, response) => {
   response.send('Get request to `/` received.');
 });
 
+/**
+ * This is used by pages that want to render the home view. It fetches the top five events based on likes for a certain city and returns the data to the client.
+ * @param  {object} request - what is sent with the post request and contains the location of the events to display
+ * @param  {object} response - what is sent back in response to the get post request and contains at most five event data for the user selected city.
+ */
 app.post('/home', (request, response) => {
   db.fetchTopFive(request.body.location, (result) => {
     response.send(result);
@@ -32,6 +37,11 @@ app.get('/search/:city/:input/:cost/:duration/:intensity', (request, responce) =
   });
 });
 
+/**
+ * Fetches an event based on the reference. If an event is found, it will return that event back to the client. If there is no matching event, it will return false to the client.
+ * @param  {object} request - what is sent with the post request and contains the user's inputted reference number
+ * @param  {object} response - what is sent back in response to the post request and contains either: 1. if found, the event data, or 2. false to tell the client there was no matching reference
+ */
 app.post('/edit', (request, response) => {
   db.fetchEventByReference(request.body.reference, (result) => {
     if (result === false) {
@@ -52,7 +62,7 @@ app.post('/save', (request, response) => {
     });
   } else {
     console.log('post has reference', request.body);
-    db.update(request.body, () => {
+    db.updateEvent(request.body, () => {
       response.send(request.body.reference);
     });
   }

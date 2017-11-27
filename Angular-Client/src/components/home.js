@@ -6,8 +6,8 @@ angular.module('app')
     },
     /**
      * Renders at least five of the top five most liked events for the user's selected city. There are filters that the user can select in order to search for new events under different criterias.
-     * @param  {service name} landingRedirector [Service used to redirect to the home page]
-     * @param  {service name} search [Service used to search for events according to certain criteria]
+     * @param  {object} landingRedirector - service used to redirect to the home page
+     * @param  {object} search - service used to search for events according to certain criteria
      */
     controller: function homeCtrl(landingRedirector, search) {
       this.recommendations = landingRedirector.result;
@@ -19,9 +19,8 @@ angular.module('app')
       };
       this.search = search.filter;
       /**
-       * [descrip]
-       * @param  {[type]} input [description]
-       * @return {[type]}       [description]
+       * The search service's filter function is used here to filter rerender the page based on the user's new criteria
+       * @param  {object} input - the user's event data from the input fields
        */
       this.searchRecommendations = (input) => {
         search.filter(input, (results) => {

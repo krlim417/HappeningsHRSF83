@@ -6,8 +6,8 @@ angular.module('app')
       this.current = '';
       /**
        * Changes the page being displayed beneath the navigation bar
-       * @param  {string} option [Name of the page to display: landing, home, event, create, confirm, checkReference]
-       * @param  {object} event  [The data for a specific event]
+       * @param  {string} option - name of the page to display: landing, home, event, create, confirm, checkReference
+       * @param  {object} event - the data for a specific event
        */
       this.changeView = (option, event) => {
         this.current = event;

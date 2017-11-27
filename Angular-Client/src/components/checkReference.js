@@ -15,8 +15,8 @@ angular.module('app')
         this.searched = true;
         /**
          * The findEventByReference service is injected into this controller. There are two variables that are used to determine if an error message needs to be rendered to the user: this.searched and this.eventFound. If the user enters an invalid reference an error message should render to the page.
-         * @param  {object} [The object to send to the server]
-         * @param  {object} eventData [The data retrieved from the server]
+         * @param  {object} input - the object to send to the server
+         * @param  {object} eventData - the data retrieved from the server
          */
         findEventByReference.fetchEditEvent({ reference: this.reference }, (eventData) => {
           this.eventFound = eventData;
