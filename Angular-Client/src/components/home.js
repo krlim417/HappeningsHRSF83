@@ -10,9 +10,7 @@ angular.module('app')
      * @param  {object} search - service used to search for events according to certain criteria
      */
     controller: function homeCtrl(landingRedirector, search) {
-      this.recommendations = landingRedirector.result.sort((a, b) => {
-        return a.likes - b.likes;
-      });
+      this.recommendations = landingRedirector.result
       this.input = {
         value: 'Anything!',
         cost: '0',

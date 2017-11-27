@@ -154,11 +154,9 @@ li {
 }
 
 .image-description {
-  /*float: left;*/
   padding-left: 30px;
   padding-right: 60px;
   margin-bottom: 30px;
-  /*padding-bottom: 50px;*/
 }
 
 .activity-image {
@@ -167,7 +165,6 @@ li {
   margin-left: 30px;
   margin-right: 30px;
   margin-bottom: 30px;
-  /*float: left;*/
 }
 
 .activity-description {
@@ -177,8 +174,6 @@ li {
   width: 600px;
   overflow: scroll;
   word-break: break-all;
-/*  border-style: solid;
-  border-color: black;*/
 }
 
 .activity-name {
@@ -188,7 +183,6 @@ li {
 }
 
 .activity-likes {
- /* display: block;*/
   border-radius: 5px;
   margin-right: 30px;
   float: right;
@@ -303,5 +297,34 @@ li {
 */
 
 .event {
-    margin-top: 100px;
+  margin-top: 100px;
+}
+
+.activity-image-in-event {
+  max-width: 400px;
+  max-height: auto;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  float: left;
+}
+
+.event-stats {
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+.description-in-event {
+  max-width: 1000px;
+  word-break: break-all;
+  margin-right: 50px;
+/*  border-style: solid;
+  border-color: black;*/
+}
+
+.event-table {
+  padding: 20px 20px 20px 20px;
+  border-style: solid;
+  background: hsla(360, 100%, 100%, 0.8);
+  border-color: #94dbea;
 }

@@ -1,16 +1,22 @@
 <div class="event">
- <h1>{{$ctrl.event.name}}</h1><button ng-click="$ctrl.dislike()" class="btn-xs btn-danger activity-likes">Dislike</button><button ng-click="$ctrl.like()" class="btn-xs btn-danger activity-likes">Like</button>
-      
-      <li>Cost: {{$ctrl.event.cost}} </li>
-      <li>Intensity: {{$ctrl.event.intensity}} </li>
-      <li>Likes: {{$ctrl.event.likes}} </li>
-    </form>
-  <div>
-    <span>
-      <img class="activity-image" src={{$ctrl.event.imgUrl}}>
-    </span>
+ <h1>{{$ctrl.event.name}}</h1>
+ <button ng-click="$ctrl.dislike()" class="btn-xs btn-danger activity-likes">Dislike</button>
+ <button ng-click="$ctrl.like()" class="btn-xs btn-danger activity-likes">Like</button>  
+  <div class="event-stats">
+    <li>Cost: ${{$ctrl.event.cost}} </li>
+    <li>Intensity: {{'&#9733'.repeat($ctrl.event.intensity)}} </li>
+    <li>Likes: {{$ctrl.event.likes}} </li>
   </div>
-  <div>
-    {{$ctrl.event.description}}
+  <div class="event-table">
+      <table >
+        <tr>
+          <td>  
+            <img class="activity-image-in-event" src={{$ctrl.event.imgUrl}}>
+          </td>
+          <td>
+            <h5 class="description-in-event">{{$ctrl.event.description}}</h5>
+          </td>
+        </tr>
+      </table>
   </div>
 </div>
