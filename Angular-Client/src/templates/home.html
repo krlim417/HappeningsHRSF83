@@ -33,18 +33,34 @@
       </div>
     </div>
   <div class="top-activity-desc">Top activities for your location:</div>
-  <div ng-repeat="activity in $ctrl.recommendations">
+<!--   <div class="event-item" ng-repeat="activity in $ctrl.recommendations">
     <div class="activity-item">
       <div class="name-likes">
-        <span class="activity-name" ng-click="$ctrl.changeView('event', activity)">{{activity.name}}</span>
-        <span>
-          <button type="button" class="btn-xs btn-danger activity-likes">Likes: <span class="badge">{{activity.likes}}</span></button>
-        </span>
+        <div class="activity-name" ng-click="$ctrl.changeView('event', activity)">{{activity.name}}
+        <button type="button" class="btn-xs btn-danger activity-likes">Likes: {{activity.likes}} </button>
+        </div>
       </div>
       <div class="image-description">
-        <span><img class="activity-image" src={{activity.imgUrl}} ng-click="$ctrl.changeView('event', activity)"></span>
-        <span class="activity-description">{{activity.description}}</span>
+        <div><img class="activity-image" src={{activity.imgUrl}} ng-click="$ctrl.changeView('event', activity)"></div>
+        <div class="activity-description">{{activity.description}}</div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <div class="event-item" ng-repeat="activity in $ctrl.recommendations">
+  <table>
+    <tr class="name-likes">
+      <td class="activity-name" ng-click="$ctrl.changeView('event', activity)">{{activity.name}}
+      <button type="button" class="btn-xs btn-danger activity-likes">Likes: {{activity.likes}} </button>
+      </td>
+    </tr>
+  </table>      
+  <table>
+    <tr class="image-description">
+      <td><img class="activity-image" src={{activity.imgUrl}} ng-click="$ctrl.changeView('event', activity)"></td>
+      <td class="activity-description">{{activity.description}}</td>
+    </tr>
+  </table>
+</div>
+
 </div>
