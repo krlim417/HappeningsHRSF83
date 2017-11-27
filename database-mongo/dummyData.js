@@ -16,7 +16,7 @@ const samplePosts = [
     duration: 'short',
     likes: 0,
     imgUrl: 'http://cdn.funcheap.com/wp-content/uploads/2015/11/17335910566_236c1088b4_b1.jpg',
-    reference: 'San Francisco#12345',
+    reference: 'san francisco#12345',
     createdAt: '2017-11-14T05:57:26.037Z',
   },
   {
@@ -33,7 +33,7 @@ const samplePosts = [
     duration: 'medium',
     likes: 10,
     imgUrl: 'http://cdn.funcheap.com/wp-content/uploads/2015/11/WSF-SugarC_03xF_resized1-768x615.jpg',
-    reference: 'Los Angeles#23494',
+    reference: 'los angeles#23494',
     createdAt: '2017-11-12T05:57:26.037Z',
   },
   {
@@ -50,7 +50,7 @@ const samplePosts = [
     duration: 'long',
     likes: 30,
     imgUrl: 'http://cdn.funcheap.com/wp-content/uploads/2012/08/tour96_1.jpg',
-    reference: 'New York#32954',
+    reference: 'new york#32954',
     createdAt: '2017-11-01T05:57:26.037Z',
   },
   {
@@ -67,7 +67,7 @@ const samplePosts = [
     duration: 'short',
     likes: 11,
     imgUrl: 'https://static.pexels.com/photos/4192/sport-alley-ball-game.jpg',
-    reference: 'Santa Cruz#323424',
+    reference: 'santa cruz#323424',
     createdAt: '2017-10-01T05:57:26.037Z',
   },
   {
@@ -84,7 +84,7 @@ const samplePosts = [
     duration: 'long',
     likes: 200,
     imgUrl: '',
-    reference: 'Berkeley#323424',
+    reference: 'berkeley#323424',
     createdAt: '2017-12-01T05:57:26.037Z',
   },
 ];
